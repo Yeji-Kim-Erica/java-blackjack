@@ -43,7 +43,7 @@ public class Application {
         System.out.println(ace == MAX_ACE);
     }
 
-    private static int determineAce(List<Integer> cards) {
+    static int determineAce(List<Integer> cards) {
         int sum = sum(cards);
         if (isBust(sum + MAX_ACE)) {
             return MIN_ACE;
