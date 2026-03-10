@@ -100,6 +100,7 @@ class GameTest {
 
         when(gameDelegate.askPlayerNames()).thenReturn(TEST_PLAYER_NAMES);
         Game game = Game.ready(gameDelegate, strategy);
+        //TODO: 자료형 불일치로 인해 깨질 것으로 예상됨
         Map<String, Integer> expectDealerWinLossResults = consistExpectDealerWinLossResults();
         Map<String, String> expectPlayerWinLossResults = consistExpectPlayerWinLossResults(TEST_PLAYER_NAMES);
 

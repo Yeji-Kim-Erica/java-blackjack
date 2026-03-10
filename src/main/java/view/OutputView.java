@@ -77,6 +77,7 @@ public class OutputView {
     }
 
     public void printWinLossResult(GameResultDto gameResultDto) {
+        //TODO: 최종 승패 -> 최종 수익
         StringBuilder winLossResult = new StringBuilder();
         winLossResult.append(WIN_LOSS_RESULT_HEADER);
 
@@ -103,6 +104,7 @@ public class OutputView {
                 consistCardInfo(PARTICIPANT_CARD_INFO_FORMAT, participantDto), participantDto.score());
     }
 
+    //TODO: 딜러 결과 출력 로직 수정
     private String consistDealerResult(GameResultDto gameResultDto) {
         String dealerName = gameResultDto.dealerDto().name();
         Map<String, Integer> dealerWinLossResults = gameResultDto.dealerWinLossResults();
@@ -116,6 +118,7 @@ public class OutputView {
         return String.format(WIN_LOSS_RESULT_FORMAT, dealerName, result);
     }
 
+    //TODO: 플레이어 결과 출력 로직 수정
     private String consistPlayerResults(GameResultDto gameResultDto) {
         Map<String, String> playerWinLossResults = gameResultDto.playerWinLossResults();
         StringBuilder result = new StringBuilder();

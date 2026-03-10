@@ -25,6 +25,7 @@ class PlayerTest {
         Deck participantDeck = Deck.createParticipantDeck(deck);
         String name = "pobi";
 
+        //TODO: 파라미터 불일치로 인해 깨질 것으로 예상됨
         assertDoesNotThrow(
                 () -> new Player(participantDeck, name)
         );

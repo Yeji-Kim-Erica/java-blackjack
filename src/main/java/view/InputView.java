@@ -16,6 +16,8 @@ public class InputView {
         return Arrays.stream(line.split(DELIMITER)).toList();
     }
 
+    //TODO: 플레이어 베팅 금액 묻는 메서드 추가
+
     public String readHitOrStand() {
         String input = sc.nextLine().trim();
         validateIsBlank(input);

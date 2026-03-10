@@ -27,6 +27,8 @@ public class BlackJackController implements GameDelegate {
         game.end(this);
     }
 
+    //TODO: 플레이어에게 베팅 금액 묻는 메서드 추가
+
     @Override
     public List<String> askPlayerNames() {
         outputView.printNamePrompt();

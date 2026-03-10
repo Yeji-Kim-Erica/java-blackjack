@@ -28,6 +28,8 @@ public class Game {
         List<String> playerNames = delegate.askPlayerNames();
         Players players = Players.of(playerNames, totalDeck);
 
+        //TODO: 베팅 금액 설정 로직 추가
+
         delegate.showInitialParticipantCards(
                 ParticipantDto.initialFrom(dealer),
                 ParticipantDto.listOf(players.getPlayers())
@@ -58,6 +60,8 @@ public class Game {
         int dealerScore = dealer.calculateDeckSum();
         boolean isDealerBust = dealer.isBust();
 
+        //TODO: 내부에서 사용되는 자료형 수정
+
         Map<Player, Result> playerWinLossResults = consistPlayerWinLossResults(dealerScore, isDealerBust);
         Map<Result, Integer> dealerWinLossResults = consistDealerResult(playerWinLossResults);
 
@@ -72,6 +76,8 @@ public class Game {
     private Map<Player, Result> consistPlayerWinLossResults(int dealerScore, boolean isDealerBust) {
         Map<Player, Result> playerWinLossResults = new LinkedHashMap<>();
         List<Player> playingPlayers = players.getPlayers();
+
+        //TODO: 베팅 성공/실패 수익 계산 기능 추가
 
         for (Player specificPlayer : playingPlayers) {
             Result specificPlayerResult = determinePlayerResult(dealerScore, isDealerBust, specificPlayer);
@@ -91,6 +97,8 @@ public class Game {
     }
 
     private Map<Result, Integer> consistDealerResult(Map<Player, Result> playerWinLossResults) {
+        //TODO: 딜러 수익 금액 계산 로직 추가
+
         Map<Result, Integer> dealerWinLossResults = new HashMap<>();
         List<Player> playingPlayers = playerWinLossResults.keySet().stream().toList();
         for (Player player : playingPlayers) {

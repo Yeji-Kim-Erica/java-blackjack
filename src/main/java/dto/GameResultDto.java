@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+//TODO: dealerWinLossResults 파라미터 자료형 Integer 로 수정
+//TODO: playerWinLossResults 파라미터 자료형 Map<String, Integer> 로 수정
+
 public record GameResultDto(ParticipantDto dealerDto,
                             List<ParticipantDto> playerDtos,
                             Map<String, Integer> dealerWinLossResults,
@@ -18,7 +21,7 @@ public record GameResultDto(ParticipantDto dealerDto,
     public static GameResultDto from(Dealer dealer, Players players,
                                      Map<Result, Integer> dealerWinLossResults,
                                      Map<Player, Result> playerWinLossResults) {
-        
+
         ParticipantDto dealerDto = ParticipantDto.from(dealer);
 
         List<ParticipantDto> playerDtos = new ArrayList<>();
@@ -26,6 +29,7 @@ public record GameResultDto(ParticipantDto dealerDto,
             playerDtos.add(ParticipantDto.from(player));
         }
 
+        //TODO: 내부에서 사용된 자료형 수정
         Map<String, Integer> dealerResults = new LinkedHashMap<>();
         for (Entry<Result, Integer> entry : dealerWinLossResults.entrySet()) {
             dealerResults.put(entry.getKey().name(), entry.getValue());

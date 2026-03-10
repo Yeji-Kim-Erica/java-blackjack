@@ -15,6 +15,7 @@ public class Players {
         this.players = players;
     }
 
+    //TODO: 베팅 금액 파라미터 추가
     public static Players of(List<String> playerNames, Deck totalDeck) {
         return new Players(createPlayers(playerNames, totalDeck));
     }

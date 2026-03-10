@@ -26,6 +26,7 @@ class PlayersTest {
         //given
         List<String> testPlayerNames = List.of("pobi", "terry", "rati", "gump");
 
+        //TODO: 파라미터 불일치로 인해 깨질 것으로 예상됨
         //when, then
         assertDoesNotThrow(
                 () -> Players.of(testPlayerNames, totalDeck)

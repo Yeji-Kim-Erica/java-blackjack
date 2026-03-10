@@ -27,4 +27,6 @@ public interface GameDelegate {
 
     // 게임의 결과를 보여주기
     void showGameResult(GameResultDto resultDto);
+
+    //TODO: 플레이어에게 베팅 금액 묻는 메서드 추가
 }

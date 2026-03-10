@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public record ParticipantDto(String name, List<CardDto> cards, int score) {
+//TODO: 파라미터에 베팅 금액 정보도 추가..?
+
     public static ParticipantDto initialFrom(Participant participant) {
         String name = participant.getName();
 
@@ -15,6 +17,7 @@ public record ParticipantDto(String name, List<CardDto> cards, int score) {
         }
 
         int score = 0;
+        //TODO: 플레이어 베팅 금액 정보 추가
         return new ParticipantDto(name, cards, score);
     }
 
@@ -27,6 +30,7 @@ public record ParticipantDto(String name, List<CardDto> cards, int score) {
         }
 
         int score = participant.calculateDeckSum();
+        //TODO: 플레이어 베팅 금액 정보 추가
         return new ParticipantDto(name, cards, score);
     }
 
@@ -43,6 +47,7 @@ public record ParticipantDto(String name, List<CardDto> cards, int score) {
 
             int score = participant.calculateDeckSum();
 
+            //TODO: 플레이어 베팅 금액 정보 추가
             ParticipantDto participantDto = new ParticipantDto(name, cards, score);
             participantDtos.add(participantDto);
         }
